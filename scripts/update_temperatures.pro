@@ -10,7 +10,7 @@ datadir = getenv('DATAHOME')
 ; Get top-level SOCNAMEs:
 socnames = file_search(datadir+'/*', /test_directory)
 
-outdata=getenv('ROOT')+'/bwgref/update_trends/data'
+outdata=getenv('TROOT')+'/data'
 
 
 for s =0, n_elements(socnames) -1 do begin

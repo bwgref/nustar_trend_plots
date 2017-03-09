@@ -1,11 +1,11 @@
 #!/usr/local/bin/bash
 
 
-export HOME=/users/bwgref
-source /users/bwgref/SOC_setup_FLT.sh
-export IDL_STARTUP=$HOME/idl/idl_lif.pro
+# IDL startup for batch jobs
+export IDL_STARTUP=$TROOT/setup/idl_lif.pro
 
-IDL_DIR=/usr/local/rsi/idl71/bin
-${IDL_DIR}/idl -quiet temperature_trends.bat
+
+IDL_LOC=/usr/local/rsi/idl71/bin
+${IDL_LOC}/idl -quiet update_temperatures.bat
 
 

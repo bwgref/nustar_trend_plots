@@ -1,7 +1,7 @@
 PRO dump_temperatures
 
 
-outdata=getenv('ROOT')+'/bwgref/update_trends/data'
+outdata=getenv('TROOT')+'/data'
 dirs = file_search(outdata+'/*', /test_directory)
 
 FOR d = 0, n_elements(dirs) -1 DO BEGIN

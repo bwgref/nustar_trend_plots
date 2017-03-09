@@ -2,7 +2,6 @@
 
 .run update_temperatures
 
-
 update_temperatures
 
 

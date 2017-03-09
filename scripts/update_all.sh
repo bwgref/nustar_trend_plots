@@ -1,13 +1,18 @@
 #!/usr/local/bin/bash
 
+source $NUSTARSETUP
 export TROOT=/disk/lif2/bwgref/git/nustar_trend_plots
 
-
-cd $TROOT
+cd $TROOT/scripts
 echo "Updating trend data." > update.log
 now=`date`
 echo $now >> update.log
 ./update_trends.sh >> update.log 2>&1
-./temperature_trends.sh >> update.log 2>&1
+./update_temperatures.sh >> update.log 2>&1
 ./dump_data.sh >> update.log 2>&1
 ./push_slack.sh update.log >> /dev/null
+
+cd $TROOT/output
+git add *txt
+git commit -m "Updated trend plot files..."
+git push

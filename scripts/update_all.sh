@@ -1,6 +1,9 @@
 #!/usr/local/bin/bash
 
-cd /users/bwgref/update_trends
+export TROOT=/disk/lif2/bwgref/git/nustar_trend_plots
+
+
+cd $TROOT
 echo "Updating trend data." > update.log
 now=`date`
 echo $now >> update.log

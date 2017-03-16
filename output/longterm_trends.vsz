@@ -1,7 +1,7 @@
 # Veusz saved document (version 1.25.1)
-# Saved at 2017-02-03T19:40:52.884133
+# Saved at 2017-03-16T00:41:12.222254
 
-AddImportPath(u'./')
+AddImportPath(u'/Users/bwgref/science/local/git/nustar_trend_plots/output')
 ImportFile(u'metrology_dark_vs_time.txt', u'time psd0 +- psd1 +-', ignoretext=True, linked=True, prefix=u'metrology_dark_vs_time.txt')
 ImportFile(u'metrology_on_vs_time.txt', u'time psd0 +- psd1 +-', ignoretext=True, linked=True, prefix=u'metrology_on_vs_time.txt')
 ImportFile(u'noise_psd0_off_vs_time.txt', u'time xa xb ya yb', ignoretext=True, linked=True, prefix=u'noise_psd0_off_vs_time.txt')

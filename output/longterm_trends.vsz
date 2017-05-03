@@ -1,5 +1,5 @@
 # Veusz saved document (version 1.25.1)
-# Saved at 2017-04-03T18:12:53.693869
+# Saved at 2017-05-03T18:00:27.914275
 
 AddImportPath(u'/Users/bwgref/local/git/nustar_trend_plots/output')
 ImportFile(u'metrology_dark_vs_time.txt', u'time psd0 +- psd1 +-', ignoretext=True, linked=True, prefix=u'metrology_dark_vs_time.txt')
@@ -1717,7 +1717,7 @@ Set('max', 'Auto')
 To('..')
 Add('axis', name='y', autoadd=False)
 To('y')
-Set('min', 3200.0)
+Set('min', 3100.0)
 Set('max', 4100.0)
 Set('direction', 'vertical')
 To('..')

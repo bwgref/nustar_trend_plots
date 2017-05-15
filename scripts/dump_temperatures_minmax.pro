@@ -8,7 +8,7 @@ FOR d = 0, n_elements(dirs) -1 DO BEGIN
    ; See if the metrology data exists:
 
    sname = file_basename(dirs[d])
-   metfile = outdata+'/'+sname+'/'+sname+'_temp.sav'
+   metfile = outdata+'/'+sname+'/'+sname+'_temp_minmax.sav'
    IF ~file_test(metfile) THEN continue
 
    restore, metfile
@@ -46,12 +46,16 @@ times = (times - t0) / 86400.
 
 ;; !p.multi = 0
 
-openw, lun, /get_lun, 'temperatures_vs_time.txt'
+openw, lun, /get_lun, 'temperatures_vs_time_minmax.txt'
 FOR i =0, n_elements(times) -1 DO BEGIN
-   printf, lun, times[i], all_obs[i].psd0_temp, all_obs[i].psd1_temp,$
-           all_obs[i].laser0_temp, all_obs[i].laser1_temp, $
-           all_obs[i].laser0_ext_temp, all_obs[i].laser1_ext_temp,$
-           format = '(7f25)'
+   printf, lun, times[i], $
+        all_obs[i].psd0_temp_min, all_obs[i].psd0_temp_max,$
+        all_obs[i].psd1_temp_min, all_obs[i].psd1_temp_max,$
+        all_obs[i].laser0_temp_min, all_obs[i].laser0_temp_max,$
+        all_obs[i].laser1_temp_min, all_obs[i].laser1_temp_max,$
+        all_obs[i].laser0_ext_temp_min, all_obs[i].laser0_ext_temp_max,$
+        all_obs[i].laser1_ext_temp_min, all_obs[i].laser1_ext_temp_max,$
+        format = '(13f25)'
 ENDFOR
 close, lun
 free_lun, lun

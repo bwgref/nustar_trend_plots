@@ -3,7 +3,7 @@
 .run dump_trends
 .run dump_temperatures
 .run dump_timing
-.run dump_tempertatures_minmax
+.run dump_temperatures_minmax
 
 dump_trends
 dump_temperatures

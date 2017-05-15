@@ -1,4 +1,4 @@
-PRO dump_temperatures
+PRO dump_temperatures_minmax
 
 
 outdata=getenv('TROOT')+'/data'

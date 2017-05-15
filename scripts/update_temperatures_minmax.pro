@@ -114,7 +114,7 @@ for i = 0, nobs - 1 do begin
 
    if good eq 0 then obs.type = 'SLEW' else obs.type = 'SCIENCE'
 
-   save, obs, file = outdir+'/'+obs.obsid+'_temp_minxmax.sav'
+   save, obs, file = outdir+'/'+obs.obsid+'_temp_minmax.sav'
 endfor
 
 

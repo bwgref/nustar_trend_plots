@@ -1,6 +1,8 @@
 #!/usr/local/bin/bash
 
-source $NUSTARSETUP
+#source $NUSTARSETUP
+source ~/SOC_setup_FLT.sh
+
 export TROOT=/disk/lif2/bwgref/git/nustar_trend_plots
 
 cd $TROOT/scripts

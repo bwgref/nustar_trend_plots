@@ -1,0 +1,6 @@
+data
+data/*
+*~
+scripts/update.log
+
+.DS_store

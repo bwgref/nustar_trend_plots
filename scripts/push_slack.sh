@@ -18,6 +18,6 @@ while IFS='' read -r line || [[ -n $line ]]; do
 #    fi
 #    last=$line
 done < "$1"
-echo -e "${outline}" | $HOME/bin/slacktee.sh >> /dev/null
+echo -e "${outline}" | $HOME/bin/slacktee.sh -c trendupdates >> /dev/null
 
 

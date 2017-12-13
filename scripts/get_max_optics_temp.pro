@@ -7,7 +7,17 @@ outfile = 'max_temps_vs_saa.txt'
 openw, lun, /get_lun, outfile
 
 ctr = 0
-FOR i = 0, n_elements(aft) -1 DO BEGIN
+
+aftind = findgen(n_elements(aft))
+
+
+r = RANDOMU(seed, n_elements(aft) )            
+sortr = sort(r)
+
+FOR ctr = 0, n_elements(aft) -1 DO BEGIN
+;   thisind = floor(n_elements(aftind) * randomu(seed))
+   i = sortr[ctr]
+
    seqid = aft[i].seqid
 
    outstring = string(aft[i].saa, format = '(20f)')
@@ -63,8 +73,31 @@ FOR i = 0, n_elements(aft) -1 DO BEGIN
    ENDFOR
 
 
+   tagbase = 'CHU4_TEMP'
+   this_tag = where(tags EQ tagbase, found)
+   outstring += string(max(obeb.(this_tag)), format = '(20f)')
+   
+
+
+
+
+   FOR opt = 0, 3 DO BEGIN
+      IF opt EQ 1 THEN CONTINUE
+
+      tagbase = 'OPT_B'+string(opt, format = '(i0)')+'_TEMP'
+
+      this_tag = where(tags EQ tagbase, found)
+         
+      outstring += string(max(obeb.(this_tag)), format = '(20f)')
+      
+   ENDFOR
 
    printf, lun, outstring
+   
+
+
+
+
 
    
 

@@ -1,5 +1,5 @@
 # Veusz saved document (version 1.25.1)
-# Saved at 2018-02-01T22:25:11.696097
+# Saved at 2018-02-01T22:29:23.667384
 
 AddImportPath(u'/Users/bwgref/science/local/git/nustar_trend_plots/output')
 ImportFile(u'met_vs_saa.txt', u'saa time x0cent y0cent x1cent y1cent x0int y0int x1int y1int', ignoretext=True, linked=True)
@@ -816,7 +816,7 @@ To('..')
 To('..')
 Add('label', name='label1', autoadd=False)
 To('label1')
-Set('label', u'Last 125 Days, X1 Centroids')
+Set('label', u'Last 1200 Days, X1 Centroids')
 Set('xPos', [0.33])
 Set('yPos', [0.971])
 To('..')

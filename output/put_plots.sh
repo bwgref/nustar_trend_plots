@@ -6,3 +6,6 @@ chmod 664 web_dir/latest_max_temps_vs_saa.pdf
 
 cp max_temps_vs_saa.pdf web_dir/
 chmod 664 web_dir/max_temps_vs_saa.pdf
+
+cp met_vs_saa.pdf web_dir/
+chmod 664 web_dir/met_vs_saa.pdf

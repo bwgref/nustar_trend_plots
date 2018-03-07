@@ -3,7 +3,7 @@ PRO dump_met
 restore, 'aft.sav'
 datdir='../data/'
 
-outfile = 'met_vs_saa.txt'
+outfile = '../output/met_vs_saa.txt'
 openw, lun, /get_lun, outfile
 
 ctr = 0
@@ -28,6 +28,10 @@ FOR ctr = 0, n_elements(aft) -1 DO BEGIN
    IF ~f.exists THEN CONTINUE
    
    restore, metfile
+
+
+   outstring += string(obs.mjdmean, format = '(20f)')
+
    outstring += string(obs.x0cent[1], format = '(20f)')
    outstring += string(obs.y0cent[1], format = '(20f)')
    outstring += string(obs.x1cent[1], format = '(20f)')

@@ -37,7 +37,9 @@ for s =0, n_elements(socnames) -1 do begin
 
      ; Truncate to just obsid
       sname = file_basename(obsid[o])
-      IF file_test(outdata+'/'+sname, /directory) THEN continue
+
+      outfile = outdata+'/'+sname+'/'+sname+'_trends.sav'
+      IF file_test(outfile) THEN continue
 
       push, obsid_list, sname
       push, socname_list, socnames[s]
@@ -162,7 +164,7 @@ for i = 0, nobs - 1 do begin
 
    if good eq 0 then obs.type = 'SLEW' else obs.type = 'SCIENCE'
 
-   save, obs, file = outdir+'/'+obs.obsid+'_met.sav'
+   save, obs, file = outdir+'/'+obs.obsid+'_trends.sav'
 
 
 ENDFOR

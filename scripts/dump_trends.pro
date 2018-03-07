@@ -7,15 +7,13 @@ FOR d = 0, n_elements(dirs) -1 DO BEGIN
    ; See if the metrology data exists:
 
    sname = file_basename(dirs[d])
-   metfile = outdata+'/'+sname+'/'+sname+'_met.sav'
-   IF ~file_test(metfile) THEN continue
-
+   metfile = outdata+'/'+sname+'/'+sname+'_trends.sav'
+   IF ~file_test(metfile) THEN CONTINUE
+   
    restore, metfile
    push, all_obs, obs
 
-
 ENDFOR
-
 
 
 science = where(all_obs.type EQ 'SCIENCE', goodn)

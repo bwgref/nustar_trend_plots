@@ -40,6 +40,12 @@ echo "Generating optics temperature" >> update.log 2>&1
 ./get_optics_temp.sh >> update.log 2>&1
 
 
+now=`date`
+echo $now >> update.log
+echo "Generating optics temperature" >> update.log 2>&1
+./update_metrology.sh >> update.log 2>&1
+
+
 ./push_slack.sh update.log >> /dev/null
 
 cd $TROOT/output

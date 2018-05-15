@@ -1,5 +1,10 @@
+<<<<<<< Updated upstream
 # Veusz saved document (version 1.26.1)
 # Saved at 2018-04-16T22:43:10.633950
+=======
+# Veusz saved document (version 1.25.1)
+# Saved at 2018-03-23T18:47:09.203387
+>>>>>>> Stashed changes
 
 AddImportPath(u'/Users/bwgref/local/git/nustar_trend_plots/output')
 ImportFile(u'met_vs_saa.txt', u'saa time x0cent y0cent x1cent y1cent x0int y0int x1int y1int', ignoretext=True, linked=True)

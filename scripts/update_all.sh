@@ -49,7 +49,7 @@ echo "Generating optics temperature" >> update.log 2>&1
 ./push_slack.sh update.log >> /dev/null
 
 cd $TROOT/output
-git pull
-git add *txt
-git commit -m "Updated trend plot files..."
-git push > gitlog.log
+git pull >> /dev/null
+git add *txt >> /dev/null
+git commit -m "Updated trend plot files..." >> /dev/null
+git push > gitlog.log >> /dev/null

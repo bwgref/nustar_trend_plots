@@ -1,7 +1,7 @@
 # Veusz saved document (version 3.0)
-# Saved at 2018-09-05T17:30:53.821572
+# Saved at 2018-09-26T23:05:11.311822
 
-AddImportPath(u'/Users/bwgref/science/local/git/nustar_trend_plots/output')
+AddImportPath(u'/Users/bwgref/local/git/nustar_trend_plots/output')
 ImportFile(u'met_vs_saa.txt', u'saa time x0cent y0cent x1cent y1cent x0int y0int x1int y1int', ignoretext=True, linked=True)
 FilterDatasets(u'`time`>57000', ['saa', 'time', 'x0cent', 'x0int', 'x1cent', 'x1int', 'y0cent', 'y0int', 'y1cent', 'y1int'], prefix=u'after_57000')
 FilterDatasets(u'`saa`<80', ['saa', 'time', 'x0cent', 'x1cent'], prefix=u'test2')

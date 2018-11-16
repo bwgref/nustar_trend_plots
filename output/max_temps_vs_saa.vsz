@@ -1,5 +1,5 @@
 # Veusz saved document (version 3.0)
-# Saved at 2018-09-26T23:02:33.508970
+# Saved at 2018-11-16T22:54:54.081306
 
 AddImportPath(u'/Users/bwgref/local/git/nustar_trend_plots/output')
 ImportFile(u'max_temps_vs_saa.txt', u'saa time opt0_0 opt0_1 opt0_2 opt0_3 opt0_4 opt0_5 opt1_0 opt1_1 opt1_2 opt1_3 opt1_4 opt1_5 laser0 laser1 lasero_ext laser1_ext chu4 opt_b0 opt_b2 opt_b3', ignoretext=True, linked=True, prefix=u'max_temps_vs_saa.txt')

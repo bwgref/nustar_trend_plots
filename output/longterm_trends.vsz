@@ -1,5 +1,5 @@
 # Veusz saved document (version 3.0)
-# Saved at 2018-11-16T21:28:03.565889
+# Saved at 2018-12-05T15:58:42.683080
 
 AddImportPath(u'/Users/bwgref/local/git/nustar_trend_plots/output')
 ImportFile(u'metrology_dark_vs_time.txt', u'time psd0 +- psd1 +-', ignoretext=True, linked=True, prefix=u'metrology_dark_vs_time.txt')

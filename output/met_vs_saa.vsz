@@ -1,5 +1,5 @@
 # Veusz saved document (version 3.0)
-# Saved at 2019-10-24T18:35:41.830210
+# Saved at 2020-01-08T00:00:10.053948
 
 AddImportPath(u'/Users/bwgref/science/local/git/nustar_trend_plots/output')
 ImportFile(u'met_vs_saa.txt', u'saa time x0cent y0cent x1cent y1cent x0int y0int x1int y1int', ignoretext=True, linked=True)

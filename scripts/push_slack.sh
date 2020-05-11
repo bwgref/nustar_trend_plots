@@ -1,4 +1,4 @@
-#!/usr/local/bin/bash
+#!/usr/bin/bash
 
 # Check to make sure that you installed slacktee.sh
 # If not, then skin this.

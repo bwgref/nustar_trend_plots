@@ -1,4 +1,6 @@
-PRO read_rawmet, infile = infile, rawdat = rawdat, basedat = basedat
+PRO read_rawmet, infile = infile, rawdat = rawdat, basedat = basedat, laser=laser
+
+; 5/11/20: BG: Added laser keyword which should be 0 or 1 when called by update_trends.pro
 
 
 rawdat_temp = {x0A:-1., x0B:-1., y0A:-1., y0B:-1, $
@@ -12,8 +14,18 @@ rawdat_temp = {x0A:-1., x0B:-1., y0A:-1., y0B:-1, $
 data = mrdfits(infile, 1, header, /unsigned, status = status, /silent)
 ;print, 'Done reading metrology...'
 
-baselines = where(data.las_on EQ 0, nbaselines)
-sources = where(data.las_on eq 1, nsources)
+; Check to see if the new laser tag exists:
+
+tag = 'LAS'+string(laser, format = '(i0)')+'_ON' 
+entry = where(tag eq tag_names(data), found)
+if found eq -1 then begin
+    baselines = where(data.las_on EQ 0, nbaselines)
+    sources = where(data.las_on eq 1, nsources)
+endif else begin
+    baselines = where(data.(entry) EQ 0, nbaselines)
+    sources = where(data.(entry) eq 1, nsources)
+endelse
+    
 
 rawdat = replicate(rawdat_temp, n_elements(sources)) 
 basedat = replicate(rawdat_temp, n_elements(baselines)) 

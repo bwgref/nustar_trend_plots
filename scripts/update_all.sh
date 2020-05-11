@@ -1,4 +1,4 @@
-#!/usr/local/bin/bash
+#!/usr/bin/bash
 
 #source $NUSTARSETUP
 source ~/SOC_setup_FLT.sh
@@ -14,6 +14,7 @@ echo $now >> update.log
 echo "Updating trends" >> update.log
 ./update_trends.sh >> update.log 2>&1
 echo >> update.log
+
 
 now=`date`
 echo $now >> update.log
@@ -52,4 +53,4 @@ cd $TROOT/output
 git pull >> /dev/null
 git add *txt >> /dev/null
 git commit -m "Updated trend plot files..." >> /dev/null
-git push > gitlog.log >> /dev/null
+git push > gitlog.log 2>&1 #>> /dev/null

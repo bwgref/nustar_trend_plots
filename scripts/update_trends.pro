@@ -90,68 +90,65 @@ for i = 0, nobs - 1 do begin
 ; Compute the mean metrology intensities:
 
             rawmet_file = file_search(socdir+'/hk/', '*met*')
-            read_rawmet, infile = rawmet_file, rawdat = rawdat, basedat = basedat
+            
+            ; Do Laser 0 first:
+            read_rawmet, infile = rawmet_file, rawdat = rawdat, basedat = basedat, $
+                laser=0
             obs.dark0 = mean(basedat.intense0)
             obs.noise0 = stddev(basedat.intense0)
             
-            obs.dark1 = mean(basedat.intense1)
-            obs.noise1 = stddev(basedat.intense1)
-
             obs.intense0 = mean(rawdat.intense0)
             obs.intense_noise0 = stddev(rawdat.intense0)
 
+            obs.x0A = mean(rawdat.x0A)
+            obs.x0B = mean(rawdat.x0B)
+            obs.y0A = mean(rawdat.y0A)
+            obs.y0B = mean(rawdat.y0B)
+
+            obs.noisex0A = stddev(rawdat.x0A)
+            obs.noisex0B = stddev(rawdat.x0B)
+            obs.noisey0A = stddev(rawdat.y0A)
+            obs.noisey0B = stddev(rawdat.y0B)
 
 
-      
+
+            obs.dark_x0A = mean(basedat.x0A)
+            obs.dark_x0B = mean(basedat.x0B)
+            obs.dark_y0A = mean(basedat.y0A)
+            obs.dark_y0B = mean(basedat.y0B)
+
+            obs.dark_noisex0A = stddev(basedat.x0A)
+            obs.dark_noisex0B = stddev(basedat.x0B)
+            obs.dark_noisey0A = stddev(basedat.y0A)
+            obs.dark_noisey0B = stddev(basedat.y0B)
+
+            read_rawmet, infile = rawmet_file, rawdat = rawdat, basedat = basedat, $
+                laser=1
+            obs.dark1 = mean(basedat.intense1)
+            obs.noise1 = stddev(basedat.intense1)
+
             obs.intense1 = mean(rawdat.intense1)
             obs.intense_noise1 = stddev(rawdat.intense1)
          
         
-            obs.x0A = mean(rawdat.x0A)
-            obs.x0B = mean(rawdat.x0B)
             obs.x1A = mean(rawdat.x1A)
             obs.x1B = mean(rawdat.x1B)
-
-
-
-            obs.noisex0A = stddev(rawdat.x0A)
-            obs.noisex0B = stddev(rawdat.x0B)
-            obs.noisex1A = stddev(rawdat.x1A)
-            obs.noisex1B = stddev(rawdat.x1B)
-
-
-
-            obs.y0A = mean(rawdat.y0A)
-            obs.y0B = mean(rawdat.y0B)
             obs.y1A = mean(rawdat.y1A)
             obs.y1B = mean(rawdat.y1B)
-            
-            obs.noisey0A = stddev(rawdat.y0A)
-            obs.noisey0B = stddev(rawdat.y0B)
+
+            obs.noisex1A = stddev(rawdat.x1A)
+            obs.noisex1B = stddev(rawdat.x1B)
             obs.noisey1A = stddev(rawdat.y1A)
             obs.noisey1B = stddev(rawdat.y1B)
 
 
-
-            
-
-            obs.dark_x0A = mean(basedat.x0A)
-            obs.dark_x0B = mean(basedat.x0B)
             obs.dark_x1A = mean(basedat.x1A)
             obs.dark_x1B = mean(basedat.x1B)
-
-            obs.dark_y0A = mean(basedat.y0A)
-            obs.dark_y0B = mean(basedat.y0B)
             obs.dark_y1A = mean(basedat.y1A)
             obs.dark_y1B = mean(basedat.y1B)
 
-            obs.dark_noisex0A = stddev(basedat.x0A)
-            obs.dark_noisex0B = stddev(basedat.x0B)
             obs.dark_noisex1A = stddev(basedat.x1A)
             obs.dark_noisex1B = stddev(basedat.x1B)
-
-            obs.dark_noisey0A = stddev(basedat.y0A)
-            obs.dark_noisey0B = stddev(basedat.y0B)
             obs.dark_noisey1A = stddev(basedat.y1A)
             obs.dark_noisey1B = stddev(basedat.y1B)
 

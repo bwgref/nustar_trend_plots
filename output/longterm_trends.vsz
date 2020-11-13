@@ -1,5 +1,5 @@
 # Veusz saved document (version 3.0.1)
-# Saved at 2020-08-19T16:46:25.225914
+# Saved at 2020-11-13T17:30:46.608725
 
 AddImportPath(u'/Users/bwgref/science/local/git/nustar_trend_plots/output')
 ImportFile(u'metrology_dark_vs_time.txt', u'time psd0 +- psd1 +-', ignoretext=True, linked=True, prefix=u'metrology_dark_vs_time.txt')
@@ -14,7 +14,6 @@ ImportFile(u'psd1_dark_vs_time.txt', u'time x0 x1 y0 y1', ignoretext=True, linke
 ImportFile(u'psd1_vs_time.txt', u'time x0 x1 y0 y1', ignoretext=True, linked=True, prefix=u'psd1_vs_time.txt')
 ImportFile(u'temperatures_vs_time.txt', u'time psd0 psd1 laser0 laser1 laser0_ext laser1_ext', ignoretext=True, linked=True, prefix=u'temperatures_vs_time.txt')
 ImportFile(u'temperatures_vs_time_minmax.txt', u'time psd0_min psd0_max psd1_min psd1_max laser0_min laser0_max laser1_min laser1_max laser0_ext_min laser0_ext_max laser1_ext_min laser1_ext_max', ignoretext=True, linked=True, prefix=u'temperatures_vs_time_minmax.txt')
-#ImportFile(u'timing_vs_time.txt', u'time min_diff mean_diff max_diff', ignoretext=True, linked=True, prefix=u'timing_vs_time.txt')
 FilterDatasets(u'`metrology_on_vs_time.txttime` > 2650', ['metrology_on_vs_time.txtpsd0', 'metrology_on_vs_time.txtpsd1', 'metrology_on_vs_time.txttime'], prefix=u'latest_lasers')
 Set('StyleSheet/axis-function/autoRange', u'next-tick')
 Add('page', name=u'PSD Full-Mission Intensity Trends', autoadd=False)

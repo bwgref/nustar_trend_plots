@@ -92,6 +92,24 @@ FOR ctr = 0, n_elements(aft) -1 DO BEGIN
       
    ENDFOR
 
+;   Addition of PA - get this from the event file header
+   evfile = socdir+'/'+seqid+'/event_cl/nu'+seqid+'A01_cl.evt'
+
+   f = file_info(evfile)
+   IF f.exists THEN BEGIN
+      ev = mrdfits(evfile, 1, /silent, evhdr)
+      ev_inf = size(ev, /structure)
+
+      IF obeb_inf.type_name EQ 'STRUCT' THEN BEGIN
+
+         outstring += string(fxpar(evhdr, 'PA_PNT'))
+
+      ENDIF
+
+   ENDIF
+
+
+
    printf, lun, outstring
    
 

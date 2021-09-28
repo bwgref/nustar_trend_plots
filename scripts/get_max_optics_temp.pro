@@ -102,7 +102,23 @@ FOR ctr = 0, n_elements(aft) -1 DO BEGIN
 
       IF ev_inf.type_name EQ 'STRUCT' THEN BEGIN
 
-         outstring += string(fxpar(evhdr, 'PA_PNT'))
+         pa_pnt = string(fxpar(evhdr, 'PA_PNT'))
+         outstring += string(pa_pnt, format = '(20f)')
+
+         ;   Addition of Yaw Offset - get this using pa_times for when we have a valid PA
+         params = aft[i].starttime+' '+aft[i].endtime+' '+string(aft[i].ra)+' '+string(aft[i].dec)+' '+pa_pnt
+
+         openw, 2,'run_patimes.csh'
+         printf, 2, 'cd /users/nuops/mps/orbit_engine'
+         printf, 2, './pa_times '+params
+         close, 2
+         spawn, 'csh ./run_patimes.csh', output
+
+         ; Get the first available yaw offset for this observation time range
+         bits = strsplit(output[3],/extract)
+         yawoffset = bits[4]
+
+         outstring += string(yawoffset, format = '(20f)')
 
       ENDIF
 

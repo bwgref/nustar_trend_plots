@@ -4,8 +4,7 @@ PRO parse_aft
 aft_file = '/home/nustar1/Web/NuSTAROperationSite/Operations/observing_schedule.txt'
 openr, lun, /get_lun, aft_file
 
-stub = {seqid:'', saa:-1.0}
- 
+stub = {starttime:'', endtime:'', seqid:'', ra:0.0, dec:0.0, saa:-1.0}
 
 WHILE ~eof(lun) DO BEGIN
    input = 'string'
@@ -14,7 +13,11 @@ WHILE ~eof(lun) DO BEGIN
 
    fields = strsplit(input, ' ',  /extract)
 
+   stub.starttime=fields[0]
+   stub.endtime=fields[1]
    stub.seqid=fields[2]
+   stub.ra=fields[4]
+   stub.dec=fields[5]
 
 ;   test_inf = size(fields[8], /structure)
 

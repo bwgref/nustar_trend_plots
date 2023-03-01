@@ -101,13 +101,27 @@ FOR ctr = 0, n_elements(aft) -1 DO BEGIN
       ev_inf = size(ev, /structure)
 
       IF ev_inf.type_name EQ 'STRUCT' THEN BEGIN
+         outstring += string(fxpar(evhdr, 'PA_PNT'), format = '(20f)')
+      ENDIF ELSE BEGIN
+         outstring += string(0, format = '(20f)')
+      ENDELSE
 
-         outstring += string(fxpar(evhdr, 'PA_PNT'))
+   ENDIF ELSE BEGIN
+      outstring += string(0, format = '(20f)')
+   ENDELSE
 
-      ENDIF
+;  Addition of OPT heaters - get this from the OBEB file
+   FOR opt = 0, 1 DO begin
+      tagbase = 'OPT'+string(opt, format = '(i0)')+'T_S_HTR'
+      this_tag = where(tags EQ tagbase, found)
+      outstring += string(max(obeb.(this_tag)), format = '(20f)')
+      
+      tagbase = 'OPT'+string(opt, format = '(i0)')+'B_S_HTR'
+      this_tag = where(tags EQ tagbase, found)
+      outstring += string(max(obeb.(this_tag)), format = '(20f)')
 
-   ENDIF
-
+   ENDFOR
+   
 
 
    printf, lun, outstring

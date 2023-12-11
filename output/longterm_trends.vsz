@@ -1,5 +1,5 @@
 # Veusz saved document (version 3.3.1)
-# Saved at 2022-11-04T23:48:34.562617
+# Saved at 2023-12-11T23:24:35.629255
 
 AddImportPath(u'/Users/hannah/Dropbox/PhD/Python/nustar_trend_plots/output')
 ImportFile(u'metrology_dark_vs_time.txt', u'time psd0 +- psd1 +-', ignoretext=True, linked=True, prefix=u'metrology_dark_vs_time.txt')
@@ -160,7 +160,7 @@ To('..')
 Add('axis', name=u'y', autoadd=False)
 To(u'y')
 Set('label', u'Intensity')
-Set('min', 1400.0)
+Set('min', 1200.0)
 Set('max', 3000.0)
 Set('autoRange', u'+2%')
 Set('direction', u'vertical')

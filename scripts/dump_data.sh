@@ -4,10 +4,10 @@
 # as another user.
 #source $NUSTARSETUP
 #export TRENDROOT=/disk/lif2/bwgref/git/
+export IDL_DIR=/usr/local/idl8.7/idl
+export IDL_STARTUP=$TROOT/setup/idl_ran.pro
 
-export IDL_STARTUP=$TROOT/setup/idl_lif.pro
-
-IDL_LOC=/usr/local/bin
+IDL_LOC=/usr/local/idl8.7/idl/bin
 ${IDL_LOC}/idl -quiet dump_data.bat
 
 

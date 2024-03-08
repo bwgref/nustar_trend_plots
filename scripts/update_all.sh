@@ -3,7 +3,7 @@
 #source $NUSTARSETUP
 source ~/SOC_setup_FLT.sh
 
-export TROOT=/disk/lif2/bwgref/git/nustar_trend_plots
+export TROOT=/home/nustar1/nustar_git/nustar_trend_plots
 
 cd $TROOT/scripts
 
@@ -39,11 +39,11 @@ now=`date`
 echo $now >> update.log
 echo "Generating optics temperature" >> update.log 2>&1
 ./get_optics_temp.sh >> update.log 2>&1
-
+# 
 
 now=`date`
 echo $now >> update.log
-echo "Generating optics temperature" >> update.log 2>&1
+echo "Generating metrology info" >> update.log 2>&1
 ./update_metrology.sh >> update.log 2>&1
 
 
@@ -53,4 +53,4 @@ cd $TROOT/output
 git pull >> /dev/null
 git add *txt >> /dev/null
 git commit -m "Updated trend plot files..." >> /dev/null
-git push > gitlog.log 2>&1 #>> /dev/null
+git push > gitlog.log 2>&1 

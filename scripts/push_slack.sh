@@ -4,7 +4,7 @@
 # If not, then skin this.
 
 
-export PATH=${HOME}/bin:$PATH
+export PATH=${HOME}/SOC/FltOps/bin:$PATH
 command -v slacktee.sh > /dev/null 2>&1 || exit 1
 
 outline=""
@@ -18,6 +18,6 @@ while IFS='' read -r line || [[ -n $line ]]; do
 #    fi
 #    last=$line
 done < "$1"
-echo -e "${outline}" | $HOME/bin/slacktee.sh -c trendupdates >> /dev/null
+echo -e "${outline}" | slacktee.sh -c trendupdates >> /dev/null
 
 

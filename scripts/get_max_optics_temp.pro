@@ -122,16 +122,16 @@ FOR ctr = 0, n_elements(aft) -1 DO BEGIN
 
    ENDFOR
    
-
+;  Addition of MAM temperatures - get this from the OBEB file
+   FOR mam = 0, 2 DO begin
+      tagbase = 'MAM'+string(opt, format = '(i0)')+'_TEMP'
+      this_tag = where(tags EQ tagbase, found)
+      outstring += string(max(obeb.(this_tag)), format = '(20f)')
 
    printf, lun, outstring
    
 
 
-
-
-
-   
 
 ENDFOR
 

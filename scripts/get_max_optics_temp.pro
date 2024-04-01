@@ -127,11 +127,17 @@ FOR ctr = 0, n_elements(aft) -1 DO BEGIN
       tagbase = 'MAM'+string(opt, format = '(i0)')+'_TEMP'
       this_tag = where(tags EQ tagbase, found)
       outstring += string(max(obeb.(this_tag)), format = '(20f)')
+      
+   ENDFOR
 
    printf, lun, outstring
    
 
 
+
+
+
+   
 
 ENDFOR
 

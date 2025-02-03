@@ -24,7 +24,7 @@ echo >> update.log
 
 now=`date`
 echo $now >> update.log
-echo "Updating min/max temperatures" >> upate.log 2>&1
+echo "Updating min/max temperatures" >> update.log 2>&1
 ./update_temperatures_minmax.sh >> update.log 2>&1
 echo >> update.log
 

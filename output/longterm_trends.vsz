@@ -1,5 +1,5 @@
 # Veusz saved document (version 3.3.1)
-# Saved at 2024-12-09T19:18:08.089980
+# Saved at 2025-04-27T21:12:37.392376
 
 AddImportPath(u'/Users/hannah/Dropbox/PhD/Python/nustar_trend_plots/output')
 ImportFile(u'metrology_dark_vs_time.txt', u'time psd0 +- psd1 +-', ignoretext=True, linked=True, prefix=u'metrology_dark_vs_time.txt')
@@ -1714,7 +1714,7 @@ To('..')
 To('..')
 Add('label', name=u'label1', autoadd=False)
 To(u'label1')
-Set('label', u'PSD0 Laser Off 1-\\sigma Noise')
+Set('label', u'PSD1 Laser Off 1-\\sigma Noise')
 Set('xPos', [0.4])
 Set('yPos', [0.97])
 To('..')

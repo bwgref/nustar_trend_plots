@@ -129,15 +129,25 @@ FOR ctr = 0, n_elements(aft) -1 DO BEGIN
       outstring += string(max(obeb.(this_tag)), format = '(20f)')
       
    ENDFOR
+   
+;  Addition of CAL temperatures - get this from the CEB file
+   hkcebfile = socdir+'/'+seqid+'/hk/nu'+seqid+'_ceb.hk'
+   f = file_info(hkcebfile)
+   IF ~f.exists THEN continue
+   ceb = mrdfits(hkcebfile, 1, /silent, hkcebhdr)
+   ceb_inf = size(ceb, /structure)
+   IF ceb_inf.type_name NE 'STRUCT' THEN continue
+   cebtags = tag_names(ceb)
+   
+   FOR cal = 0, 1 DO begin
+      tagbase = 'CAL'+string(cal, format = '(i0)')+'TEMP'
+      this_tag = where(cebtags EQ tagbase, found)
+      outstring += string(max(ceb.(this_tag)), format = '(20f)')
+      
+   ENDFOR
 
    printf, lun, outstring
-   
 
-
-
-
-
-   
 
 ENDFOR
 
